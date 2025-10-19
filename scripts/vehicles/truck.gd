@@ -28,6 +28,10 @@ var current_speed: float = 0.0
 var heading_direction: Vector2 = Vector2.ZERO
 var steering_wheel_position: float = 0.0  # Posición actual del volante (-1800 a +1800)
 
+# Referencias a nodos
+@onready var reverse_audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var is_reversing: bool = false
+
 func _ready():
 	# Configurar propiedades del RigidBody2D para mejor simulación
 	# Camiones tienen más inercia y resistencia
@@ -46,6 +50,9 @@ func _physics_process(delta):
 	
 	# Velocidad actual en la dirección de avance
 	current_speed = linear_velocity.dot(heading_direction)
+	
+	# === CONTROL DE AUDIO DE REVERSA ===
+	handle_reverse_audio(input_accel)
 	
 	# === SISTEMA DE VOLANTE ===
 	update_steering_wheel(input_steer, delta)
@@ -153,3 +160,18 @@ func get_steering_wheel_turns() -> float:
 func get_steering_wheel_percentage() -> float:
 	# Retorna el porcentaje de giro del volante (-1 a +1)
 	return steering_wheel_position / max_steering_wheel_angle
+
+func handle_reverse_audio(input_accel: float):
+	# Detectar si el jugador está intentando ir en reversa o está moviéndose en reversa
+	var should_play_reverse = (input_accel < 0) or (input_accel == 0 and current_speed < -5.0)
+	
+	if should_play_reverse and not is_reversing:
+		# Empezar a reproducir el audio de reversa
+		if reverse_audio and not reverse_audio.playing:
+			reverse_audio.play()
+		is_reversing = true
+	elif not should_play_reverse and is_reversing:
+		# Detener el audio de reversa
+		if reverse_audio and reverse_audio.playing:
+			reverse_audio.stop()
+		is_reversing = false
