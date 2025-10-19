@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dflowu10m56oc" path="res://Truck.gd" id="1_guhgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guhgt"]
-size = Vector2(356, 134)
+size = Vector2(134, 356)
 
 [node name="Truck" type="RigidBody2D"]
 mass = 1.5
@@ -14,13 +14,13 @@ braking_force = 1.0
 friction = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -1.5707964
+position = Vector2(0, -110)
 texture = ExtResource("1_6da8t")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
-rotation = 1.5707964
+position = Vector2(0, -110)
 shape = SubResource("RectangleShape2D_guhgt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -60)
+zoom = Vector2(0.71, 0.71)

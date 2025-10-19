@@ -33,6 +33,9 @@ func _ready():
 	# Camiones tienen más inercia y resistencia
 	linear_damp = 0.8  # Mayor resistencia al movimiento (vehículo pesado)
 	angular_damp = 3.5  # Mayor resistencia a la rotación (difícil de girar)
+	
+	# Ajustar centro de masa ligeramente hacia adelante del eje trasero
+	center_of_mass = Vector2(0, 25)  # Ligeramente adelante del eje trasero (hacia el norte)
 
 func _physics_process(delta):
 	var input_accel = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
