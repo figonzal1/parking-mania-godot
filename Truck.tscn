@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca5qu41l8xc1h"]
+
+[ext_resource type="Texture2D" uid="uid://c4hj58wpa0eii" path="res://img/truck.png" id="1_6da8t"]
+[ext_resource type="Script" uid="uid://dflowu10m56oc" path="res://Truck.gd" id="1_guhgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guhgt"]
+size = Vector2(356, 134)
+
+[node name="Truck" type="RigidBody2D"]
+mass = 1.5
+gravity_scale = 0.0
+script = ExtResource("1_guhgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5707964
+texture = ExtResource("1_6da8t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_guhgt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
