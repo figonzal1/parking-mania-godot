@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://0dl4uip77ba7"]
-
-[ext_resource type="PackedScene" uid="uid://ca5qu41l8xc1h" path="res://Truck.tscn" id="1_glv2v"]
-
-[node name="Node" type="Node"]
-
-[node name="Truck" parent="." instance=ExtResource("1_glv2v")]
