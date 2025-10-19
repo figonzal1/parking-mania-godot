@@ -10,6 +10,8 @@ size = Vector2(356, 134)
 mass = 1.5
 gravity_scale = 0.0
 script = ExtResource("1_guhgt")
+braking_force = 1.0
+friction = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5707964
