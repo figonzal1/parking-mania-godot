@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4hj58wpa0eii"
-path="res://.godot/imported/truck.png-ca83aa722d2a556db40406f19a2ede95.ctex"
+uid="uid://f6v3xsthhpux"
+path="res://.godot/imported/parking_sprite.png-891d539ab3bf96155a173ee1cfc25c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/truck.png"
-dest_files=["res://.godot/imported/truck.png-ca83aa722d2a556db40406f19a2ede95.ctex"]
+source_file="res://assets/sprites/environment/parking_sprite.png"
+dest_files=["res://.godot/imported/parking_sprite.png-891d539ab3bf96155a173ee1cfc25c45.ctex"]
 
 [params]
 
