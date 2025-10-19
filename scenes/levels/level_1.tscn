@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq34eed1tvsmr"]
+[gd_scene load_steps=7 format=3 uid="uid://dq34eed1tvsmr"]
 
 [ext_resource type="PackedScene" uid="uid://ca5qu41l8xc1h" path="res://scenes/vehicles/truck.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://53vhinx0r8uj" path="res://scripts/levels/level_1.gd" id="1_ihfcg"]
 [ext_resource type="Texture2D" uid="uid://f6v3xsthhpux" path="res://assets/sprites/environment/parking_sprite.png" id="2_hbghi"]
 [ext_resource type="Script" uid="uid://q0m8rmn4hjg0" path="res://scripts/environment/parking_zone.gd" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://tlo2c3acdnfw" path="res://scenes/ui/HUD.tscn" id="5_6761a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn12h"]
 size = Vector2(179, 386.5)
@@ -26,3 +27,5 @@ shape = SubResource("RectangleShape2D_hn12h")
 
 [node name="Truck" parent="." instance=ExtResource("1_3hls8")]
 position = Vector2(1226, 186)
+
+[node name="HUD" parent="." instance=ExtResource("5_6761a")]

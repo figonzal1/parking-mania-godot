@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://tlo2c3acdnfw"]
+
+[ext_resource type="Script" uid="uid://c0f5riya8dd1m" path="res://scripts/ui/hud.gd" id="1_atyv1"]
+[ext_resource type="Texture2D" uid="uid://deux414vqmoie" path="res://assets/sprites/ui/steering_wheel.png" id="1_kw0id"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_atyv1")
+
+[node name="SteeringWheelContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -215.0
+offset_right = -15.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SteeringWheel" type="Sprite2D" parent="SteeringWheelContainer"]
+texture = ExtResource("1_kw0id")
