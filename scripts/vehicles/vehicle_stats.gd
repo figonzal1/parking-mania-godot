@@ -36,6 +36,14 @@ const PX_PER_M := 40.0
 # Maximum lateral force per axle (caps sliding at extreme angles)
 @export var lateral_force_max: float = 5000.0
 
-# === RESISTANCE ===
-# Constant opposing-motion force when no throttle (simulates rolling resistance)
+# === RESISTANCE & ENGINE BRAKING ===
+# Constant opposing-motion force (tires + road friction), always active
 @export var rolling_resistance: float = 80.0
+# Force per px/s applied when off-throttle (engine compression braking)
+# At max_speed_forward: total engine brake = engine_brake_coef * max_speed
+@export var engine_brake_coef: float = 1.5
+
+# === THROTTLE RESPONSE ===
+# Seconds for throttle to reach ~63% of target input (diesel spool-up lag)
+# 0 = instant response (arcade feel)
+@export var throttle_response_time: float = 0.6
