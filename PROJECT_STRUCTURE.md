@@ -1,5 +1,28 @@
 # 📁 Estructura del Proyecto - Parking Mania
 
+## 📐 Escala Física
+
+**1 metro = 40 píxeles** (constante `VehicleStats.PX_PER_M`).
+
+Cambiar esta constante requiere reescalar todos los sprites y los valores de los `.tres`.
+Referencia: camión 3/4 → sprite/collision de ~356 px de largo ≈ 8.9 m.
+
+---
+
+## 🚗 Agregar un vehículo nuevo
+
+1. Crear `resources/vehicle_stats/<nombre>.tres` (tipo `VehicleStats`) con los parámetros físicos.
+2. Crear `scenes/vehicles/<nombre>.tscn` (nodo raíz `RigidBody2D`):
+   - Script: `scripts/vehicles/<nombre>.gd` (o `vehicle_body.gd` directamente si no necesita comportamiento especial).
+   - Propiedad `stats` apuntando al `.tres` creado.
+   - Hijos obligatorios: `Marker2D` **FrontAxle** y **RearAxle** sobre los ejes visuales.
+   - Hijo opcional: `Marker2D` **HitchPoint** en el parachoques trasero (necesario para remolques).
+3. Crear `scripts/vehicles/<nombre>.gd` solo si el vehículo tiene comportamiento especial (audio, partículas, etc.).
+   Extender `VehicleBody` y llamar `super(delta)` en `_physics_process`.
+4. Tunear los valores del `.tres` en `scenes/levels/sandbox.tscn`.
+
+---
+
 ## 🎯 Organización de Carpetas
 
 ### `/scenes/` - Escenas del juego

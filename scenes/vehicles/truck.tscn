@@ -1,18 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca5qu41l8xc1h"]
+[gd_scene load_steps=6 format=3 uid="uid://ca5qu41l8xc1h"]
 
 [ext_resource type="Texture2D" uid="uid://c4hj58wpa0eii" path="res://assets/sprites/vehicles/truck.png" id="1_6da8t"]
 [ext_resource type="Script" uid="uid://dflowu10m56oc" path="res://scripts/vehicles/truck.gd" id="1_guhgt"]
 [ext_resource type="AudioStream" uid="uid://cjmjdd73w2v4h" path="res://assets/sounds/sfx/truck_reverse_beep.wav" id="3_vcknj"]
+[ext_resource type="Resource" path="res://resources/vehicle_stats/truck_medium.tres" id="4_stats"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guhgt"]
 size = Vector2(134, 356)
 
 [node name="Truck" type="RigidBody2D"]
-mass = 1.5
 gravity_scale = 0.0
 script = ExtResource("1_guhgt")
-braking_force = 1.0
-friction = 1.0
+stats = ExtResource("4_stats")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -110)
@@ -29,3 +28,12 @@ zoom = Vector2(0.71, 0.71)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vcknj")
 volume_db = -20.0
+
+[node name="FrontAxle" type="Marker2D" parent="."]
+position = Vector2(0, -230)
+
+[node name="RearAxle" type="Marker2D" parent="."]
+position = Vector2(0, 15)
+
+[node name="HitchPoint" type="Marker2D" parent="."]
+position = Vector2(0, 65)

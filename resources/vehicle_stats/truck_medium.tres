@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="VehicleStats" format=3]
+
+[ext_resource type="Script" path="res://scripts/vehicles/vehicle_stats.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+mass = 10.0
+cog_y_offset = 0.0
+engine_force = 1500.0
+reverse_force_ratio = 0.4
+max_speed_forward = 600.0
+max_speed_reverse = 150.0
+brake_force = 2500.0
+max_wheel_angle_deg = 30.0
+max_steering_wheel_angle_deg = 1800.0
+lock_to_lock_time_s = 4.0
+steering_return_factor = 3.0
+cornering_stiffness_front = 300.0
+cornering_stiffness_rear = 350.0
+lateral_force_max = 5000.0
+rolling_resistance = 80.0
